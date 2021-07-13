@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<ul class="nav nav-tabs">
+    <li class="active nav-item"><a class="nav-link btn btn-success" data-toggle="tab" href="#firstTab">View All</a></li>
+    <li class="nav-item"><a class="nav-link btn btn-outline-warning" data-toggle="tab" href="#secondTab">Add New</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in">@Html.Action("Position")</div>
+    <div id="secondTab" class="tab-pane fade in active ml-5 mt-4">@Html.Action("Create")</div>
+</div>
+@section scripts{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblEpersonla">
+    <Key>
+      <PropertyRef Name="eId" />
+    </Key>
+    <Property Name="eId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eTitle" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="eName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eDob" Type="date" Nullable="false" />
+    <Property Name="eGender" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="eNationalIdNo" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="ePhoneNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="eEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eMeritals" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="eJoinDate" Type="date" Nullable="false" />
+    <Property Name="eImage" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="EMSModelsStoreContainer">
+    <EntitySet Name="tblEpersonla" EntityType="Self.tblEpersonla" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<EMS.Models.tblEpersonla>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table table-bordered table-striped table-hover table-sm mt-4">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Date of Birth
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            National Id No
+        </th>
+        <th>
+            Phone No
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Merital Status
+        </th>
+        <th>
+            Join Date
+        </th>
+        <th>
+            Profile Picture
+        </th>
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.eTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eDob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eNationalIdNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ePhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eMeritals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eJoinDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eImage)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.eId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.eId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.eId })
+        </td>*@
+    </tr>
+}
+
+</table>

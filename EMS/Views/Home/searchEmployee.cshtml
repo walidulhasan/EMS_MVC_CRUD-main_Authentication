@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "searchEmployee";
+}
+@section styles{
+    
+}
+<h2>Search Employee</h2>
+<div class="row">
+    <div class="col-md-12">
+        @Ajax.ActionLink("All", "srEmployee", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "tblEmployeeResult" }, new { @class = "btn btn-dark" })
+        @foreach (char c in ViewBag.Chars)
+        {
+            @Ajax.ActionLink(c.ToString(), "srEmployee", "Home", new { start = c.ToString() }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "tblEmployeeResult" }, new { @class = "btn btn-primary btn-sm" });
+            <span>&nbsp;</span>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 clearfix mt-4">
+        @using (Ajax.BeginForm("EpmName", "Home", new AjaxOptions { UpdateTargetId = "tblEmployeeResult", HttpMethod = "POST", InsertionMode = InsertionMode.Replace }))
+        {
+            <div class="form-group row-cols-md-4">
+                <div class="input-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Phone no" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-success">Go!</button>
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<div class="col">
+    <div id="tblEmployeeResult">
+        @Html.Action("srEmployee", "Home")
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

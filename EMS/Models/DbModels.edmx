@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EMSModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblEpersonla">
+          <Key>
+            <PropertyRef Name="eId" />
+          </Key>
+          <Property Name="eId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eTitle" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="eName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="eDob" Type="date" Nullable="false" />
+          <Property Name="eGender" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="eNationalIdNo" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="ePhoneNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="eEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="eMeritals" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="eJoinDate" Type="date" Nullable="false" />
+          <Property Name="eImage" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="EMSModelsStoreContainer">
+          <EntitySet Name="tblEpersonla" EntityType="Self.tblEpersonla" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EMSModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblEpersonla">
+          <Key>
+            <PropertyRef Name="eId" />
+          </Key>
+          <Property Name="eId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eTitle" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="eName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eDob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="eGender" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eNationalIdNo" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ePhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eMeritals" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eJoinDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="eImage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="EMSeVidenceExamEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblEpersonlas" EntityType="Self.tblEpersonla" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EMSModelsStoreContainer" CdmEntityContainer="EMSeVidenceExamEntities">
+          <EntitySetMapping Name="tblEpersonlas">
+            <EntityTypeMapping TypeName="EMSModels.tblEpersonla">
+              <MappingFragment StoreEntitySet="tblEpersonla">
+                <ScalarProperty Name="eId" ColumnName="eId" />
+                <ScalarProperty Name="eTitle" ColumnName="eTitle" />
+                <ScalarProperty Name="eName" ColumnName="eName" />
+                <ScalarProperty Name="eDob" ColumnName="eDob" />
+                <ScalarProperty Name="eGender" ColumnName="eGender" />
+                <ScalarProperty Name="eNationalIdNo" ColumnName="eNationalIdNo" />
+                <ScalarProperty Name="ePhoneNo" ColumnName="ePhoneNo" />
+                <ScalarProperty Name="eEmail" ColumnName="eEmail" />
+                <ScalarProperty Name="eMeritals" ColumnName="eMeritals" />
+                <ScalarProperty Name="eJoinDate" ColumnName="eJoinDate" />
+                <ScalarProperty Name="eImage" ColumnName="eImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

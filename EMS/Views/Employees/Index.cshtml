@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EMS.Models.tblEmployee>
+@{
+    ViewBag.Title = "Index";
+}
+<h2 class="text-center mt-3" style="color:#020240">Employee List</h2>
+<div class="row mt-4 mx-2">
+    <div class="col">
+        <table class="table table-bordered table-striped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Phone No</th>
+                    <th>Employee Position</th>
+                    <th class="text-center">Profile Picture</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.eName</td>
+                        <td>@item.DateOfBirth.ToShortDateString()</td>
+                        <td>@item.eGender</td>
+                        <td>@item.PhoneNo</td>
+                        <td>@item.tblPosition.Position</td>
+                        <td class="text-center"><img src="@Url.Content(item.eImage)" width="40" height="30" /></td>
+                        <td class="text-center">
+                            @Html.ActionLink(" ", "Edit", new { id = item.eId }, new { @class = "btn btn-primary btn-sm fa fa-edit" })
+                            @Html.ActionLink("  ", "Delete", new { id = item.eId }, new { @class = "btn btn-danger btn-sm fa fa-trash", onclick = "return confirm('Are You Sure Want To Delete Employee Id-" + item.eId + "');"})
+                            
+                        </td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

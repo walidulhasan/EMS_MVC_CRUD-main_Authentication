@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSeVidenceExamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMSeVidenceExam.dbo.tbl_Employeeinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Employeeinfo">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Position" />
+      <PropertyRef Name="Office" />
+      <PropertyRef Name="Salary" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Office" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="EMSeVidenceExamModelStoreContainer">
+    <EntitySet Name="tbl_Employeeinfo" EntityType="Self.tbl_Employeeinfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Employeeinfo].[EmployeeID] AS [EmployeeID], 
+    [tbl_Employeeinfo].[Name] AS [Name], 
+    [tbl_Employeeinfo].[Position] AS [Position], 
+    [tbl_Employeeinfo].[Office] AS [Office], 
+    [tbl_Employeeinfo].[Salary] AS [Salary], 
+    [tbl_Employeeinfo].[ImagePath] AS [ImagePath]
+    FROM [dbo].[tbl_Employeeinfo] AS [tbl_Employeeinfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
